@@ -1,7 +1,7 @@
 <template>
   <p class="user">
     name <input type="text" v-model="user.name" class="inputBox" placeholder="enter your name">
-    <br>age <input type="text" v-model="user.age" class="inputBox" placeholder="enter your age">
+    <br>age <input type="number" v-model.number="user.age" class="inputBox" placeholder="enter your age">
     <br><button v-on:click="addUser()" class="button-13">submit</button>
   </p>
 
@@ -64,11 +64,9 @@ export default {
       })
       window.location.reload()
       console.warn('status update succesfully')
-
     }
   },
 }
-
 </script>
 
 
