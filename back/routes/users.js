@@ -1,3 +1,4 @@
+// http://localhost:8000/users/
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
@@ -12,9 +13,24 @@ router.get('/', async (req, res) => {
   }
 })
 
-// getting one
+// getting one by search
+router.get('/search/:name', async (req, res) => {
+  let user
+  try {
+    user = await User.find({ name: req.params.name })
+    if (user == null) {
+      return res.status(404).json({ message: 'cannot find user' })
+    }
+  } catch (err) {
+    return res.status(500).json({ message: err.message })
+  }
+
+  res.send(user)
+})
+
+// getting one by id
 router.get('/:id', getUser, (req, res) => {
-  res.send(res.user.name)
+  res.send(res.user)
 })
 
 // creating one
@@ -76,5 +92,20 @@ async function getUser(req, res, next) {
   res.user = user
   next()
 }
+
+// async function getUserByName(req, res, next) {
+//   let user
+//   try {
+//     user = await User.find({ name: req.params.name })
+//     if (user == null) {
+//       return res.status(404).json({ message: 'cannot find user' })
+//     }
+//   } catch (err) {
+//     return res.status(500).json({ message: err.message })
+//   }
+
+//   res.user = user
+//   next()
+// }
 
 module.exports = router

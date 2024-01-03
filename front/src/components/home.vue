@@ -5,15 +5,15 @@
     <br><button v-on:click="addUser()" class="button-13">submit</button>
   </p>
 
-    <p v-for="item in list" :key="item._id" class="user">
-      <br>id : {{ item._id }}
-      <br>name : {{ item.name }}
-      <br>age : {{ item.age }}
-      <br>status : {{ item.status }}
-      <br><button v-on:click="updateUser(item._id)" class="button-13">update user</button>
-      <button v-on:click="updateStatus(item._id, item.status)" class="button-13">update status</button>
-      <button v-on:click="deleteUser(item._id)" class="button-13">delete</button>
-    </p>
+  <p v-for="item in list" :key="item._id" class="user">
+    <br>id : {{ item._id }}
+    <br>name : {{ item.name }}
+    <br>age : {{ item.age }}
+    <br>status : {{ item.status }}
+    <br><button v-on:click="updateUser(item._id)" class="button-13">update user</button>
+    <button v-on:click="updateStatus(item._id, item.status)" class="button-13">update status</button>
+    <button v-on:click="deleteUser(item._id)" class="button-13">delete</button>
+  </p>
 </template>
   
 <script>
@@ -47,6 +47,7 @@ export default {
     async deleteUser(id) {
       let result = await axios.delete(`http://localhost:8000/users/${id}`)
       window.location.reload()
+      console.warn('delete succesfully')
     },
     async updateUser(id) {
       let result = await axios.patch(`http://localhost:8000/users/${id}`, {
@@ -54,6 +55,7 @@ export default {
         age: this.user.age,
       })
       window.location.reload()
+      console.warn('user update succesfully')
     },
     async updateStatus(id, status) {
       status = !status
@@ -61,6 +63,8 @@ export default {
         status: status
       })
       window.location.reload()
+      console.warn('status update succesfully')
+
     }
   },
 }
@@ -86,7 +90,8 @@ export default {
   display: inline-block;
   font-family: "Poppins", sans-serif;
   font-size: 13px;
-  padding: 0 10px 0 11px;
+  line-height: 23px;
+  padding: 0 10px 0 10px;
   position: relative;
   text-align: center;
   text-decoration: none;
