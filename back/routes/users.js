@@ -39,6 +39,9 @@ router.patch('/:id', getUser, async (req, res) => {
   if (req.body.age != null) {
     res.user.age = req.body.age
   }
+  if (req.body.status != null) {
+    res.user.status = req.body.status
+  }
   try {
     const updatedUser = await res.user.save()
     res.json(updatedUser)
