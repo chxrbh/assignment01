@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff
+}
+
+/* template {
+  height: 100%
+}
+
+.container {
+  margin: 50px auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.userInput {
+  max-width: 400px;
+  border-radius: 42px;
+  background: #FA7A53;
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.inputBox {
+  width: 215px;
+  border-radius: 15px;
+  border: 2px solid #FAF4E4;
+  background: #FFF;
+  text-align: center;
+  height: 35px;
+  margin: 8px;
+}
+
+.submitButton {
+  width: 215px;
+  text-align: center;
+  border-radius: 15px;
+  border: #FBD743;
+  background: #FBD743;
+  height: 35px;
+  margin: 8px;
+  color: #FFF;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.submitButton:hover {
+  border-color: #faf4e4;
+  border: 2px #FAF4E4 solid ;
+  background-color: #bbd444;
+}
+
+.submitButton:focus {
+  border-color: #faf4e4;
+  border: 2px #FAF4E4 solid ;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+} */

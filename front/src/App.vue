@@ -1,20 +1,18 @@
 <script setup>
-  import home from './components/home.vue'
-  import search from './components/search.vue'
+  // import home from './components/home.vue'
+  import search from './components/searchwdesign.vue'
+  import home from './components/homewdesign.vue'
 </script>
 
 <template>
-  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  <div id="wrapper">
-    <search />
     <home />
-  </div>
+    <search />
 </template>
 
 <style>
-.wrapper {
+/* .wrapper {
   font-family: 'Poppins';
   max-width: 500px;
   margin: auto;
-}
+} */
 </style>

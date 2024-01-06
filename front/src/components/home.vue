@@ -1,19 +1,21 @@
 <template>
-  <p class="user">
-    name <input type="text" v-model="user.name" class="inputBox" placeholder="enter your name">
-    <br>age <input type="number" v-model.number="user.age" class="inputBox" placeholder="enter your age">
-    <br><button v-on:click="addUser()" class="button-13">submit</button>
+    <p class="userInput">
+    <h1 class="hello">Hello !</h1>
+    <input type="text" v-model="user.name" class="inputBox" placeholder="enter your name">
+    <br><input type="number" v-model.number="user.age" class="inputBox" placeholder="enter your age">
+    <br><button v-on:click="addUser()" class="submitButton">submit</button>
+    <br><button v-on:click="" class="submitButton">search</button>
   </p>
 
-  <p v-for="item in list" :key="item._id" class="user">
-    <br>id : {{ item._id }}
-    <br>name : {{ item.name }}
-    <br>age : {{ item.age }}
-    <br>status : {{ item.status }}
-    <br><button v-on:click="updateUser(item._id)" class="button-13">update user</button>
-    <button v-on:click="updateStatus(item._id, item.status)" class="button-13">update status</button>
-    <button v-on:click="deleteUser(item._id)" class="button-13">delete</button>
-  </p>
+    <p v-for="item in list" :key="item._id" class="user">
+      <br>id : {{ item._id }}
+      <br>name : {{ item.name }}
+      <br>age : {{ item.age }}
+      <br>status : {{ item.status }}
+      <br><button v-on:click="updateUser(item._id)" class="button-13">update user</button>
+      <button v-on:click="updateStatus(item._id, item.status)" class="button-13">update status</button>
+      <button v-on:click="deleteUser(item._id)" class="button-13">delete</button>
+    </p>
 </template>
   
 <script>
@@ -72,7 +74,19 @@ export default {
 
 
 <style>
-.user {
+.hello {
+  line-height: 20px;
+  color: #FFF;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 70px;
+}
+
+/* .user {
   padding: 10px;
   font-family: 'Poppins';
   color: rgb(115, 62, 31);
@@ -135,7 +149,7 @@ export default {
 
 .template {
   font-family: 'Poppins';
-  /* max-width: 500px;
-  margin: auto; */
-}
+  max-width: 500px;
+  margin: auto;
+} */
 </style>

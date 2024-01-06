@@ -4,7 +4,7 @@ const router = express.Router()
 const User = require('../models/user')
 
 // getting all
-router.get('/', async (req, res) => {
+router.get('/search' || '/', async (req, res) => {
   try {
     const users = await User.find()
     res.json(users)
@@ -13,12 +13,12 @@ router.get('/', async (req, res) => {
   }
 })
 
-// getting one by search
+// getting one by name
 router.get('/search/:name', async (req, res) => {
   let user
   try {
     user = await User.find({ name: req.params.name })
-    if (user == null) {
+    if (user == null || user.length == 0) {
       return res.status(404).json({ message: 'cannot find user' })
     }
   } catch (err) {

@@ -2,7 +2,7 @@
   <input type="text" v-model="inputName" class="inputBox" placeholder="search by name">
   <button v-on:click="search()" class="button-13">search</button>
   <p v-for="item in list" :key="item._id" class="user">
-    id : {{ item._id }}
+    <br>.id : {{ item._id }}
     <br>name : {{ item.name }}
     <br>age : {{ item.age }}
     <br>status : {{ item.status }}
