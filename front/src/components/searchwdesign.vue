@@ -3,8 +3,8 @@
   <div class="body">
     <div class="wrapper">
       <div class="input-box">
-        <input type="text" v-model="inputName" placeholder="search">
-        <button v-on:click="search()" class="search-button">
+        <input  @keydown.enter="search()" type="text" v-model="inputName" placeholder="search">
+        <button @click="search()" class="search-button">
           <i class="gg-search"></i>
         </button>
       </div>
@@ -214,4 +214,5 @@ export default {
   text-align: center;
   color: #FA7A53
 }
+
 </style>
